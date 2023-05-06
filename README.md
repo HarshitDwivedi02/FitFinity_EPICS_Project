@@ -19,12 +19,28 @@ To provide a generalized Balance Diet so that they can improve their dietary hab
 ●	Providing health and wellness information:
 Fit-Finity offers a range of resources and information to help users learn more about their health and how to improve it via articles, videos, and other beneficiary materials.
 
+# TECHNICAL OVERVIEW 
+Implementation of modules 
+Frontend:
+UI/UX 
+
+
+Implementation of modules 
+Backend:
+
+FLASK 
+MYSQL 
+PTHON 
+
+
+WHY IS FIT-FITNITY IS DIFFRENT?
 Our app Fit-Finity provides special features like:
 Problem Specific Exercise/Yoga recommendations
 Preferable Dietary habits 
 Health analysis report (BMI etc). 
 
-#Outcome of Fit-finity 
+
+# Outcome of Fit-finity 
 Fit-Finity, our app, comes to the rescue by giving people a sigh of relief by assisting them in taking care of their health and keeping track of their body. 
 
 People have grasped the need of having a good and robust immunity throughout this covid outbreak. 
