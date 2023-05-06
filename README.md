@@ -22,18 +22,16 @@ Fit-Finity offers a range of resources and information to help users learn more 
 # TECHNICAL OVERVIEW 
 Implementation of modules 
 Frontend:
-UI/UX 
+UI/UX ,
 
 
 Implementation of modules 
 Backend:
 
-FLASK 
-MYSQL 
-PTHON 
+FLASK , MYSQL ,PYTHON 
 
 
-WHY IS FIT-FITNITY IS DIFFRENT?
+# WHY IS FIT-FITNITY IS DIFFRENT?
 Our app Fit-Finity provides special features like:
 Problem Specific Exercise/Yoga recommendations
 Preferable Dietary habits 
