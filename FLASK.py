@@ -2,17 +2,6 @@ from flask import Flask , render_template , request
 import mysql.connector
 import pickle
 
-# Database connection
-mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="123456",
-    database="users_info"
-)
-
-# Create cursor
-cursor = mydb.cursor()
-
 # function to calculate BMI
 def calculate_bmi(weight, height):
     bmi = weight / ((height/100)**2)
@@ -23,17 +12,35 @@ app = Flask(__name__)
 @app.route('/')
 
 def styling():
-    return render_template("main.html")
+    return render_template("Landingpage.html")
 
 # route to handle the form 1 submission
-@app.route('/submit', methods=['POST'])
+@app.route('/Get Started', methods=['GET','POST'])
 def submit():
-    name = request.form['name']
-    age = request.form['age']
-    height = request.form['height']
-    weight = request.form['weight']
-    gender = request.form['gender']
+    if (request.method=='POST'):
+       name = request.form.get['name']
+       age = request.form.get['age']
+       height = request.form.get['height']
+       weight = request.form.get['weight']
+       gender = request.form.get['gender']
     bmi = calculate_bmi(float(weight), float(height))
+    # Database connection
+    mydb = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="123456",
+    database="users_info") 
+                        
+    #Create cursor
+    cursor = mydb.cursor()
+    # Create a table to store user details
+    mydb.execute('''CREATE TABLE IF NOT EXISTS users(
+                id INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                age INTEGER NOT NULL,
+                gender TEXT NOT NULL,
+                height REAL NOT NULL,
+                weight REAL NOT NULL)''')
 
 
     # Insert user details into the database
@@ -47,22 +54,21 @@ def submit():
    # return the user's details from the database
     cursor.execute("SELECT * FROM users WHERE id=%s", (cursor.lastrowid,))
     result = cursor.fetchone()
-    return render_template('', result=result)
+    return render_template('form1.html', result=result)
 
 # route to handle the form 2 submission
-@app.route('/submit1', methods=['POST'])
+@app.route('/GET YOUR RESULTS', methods=['POST'])
 def submit1():
-    name1 = request.form['name']
-    age1 = request.form['age']
     stress_level = request.form['stress_level']
     activity_level = request.form['activity_level']
     
     # return the user's details from the database
-    return render_template('', name=name1, age=age1, stress_level=stress_level, activity_level=activity_level)
+    return render_template('form2.html',  stress_level=stress_level, activity_level=activity_level)
 
 # route to handle the form submission and match the entered values with the database
+"""
 @app.route('/submit2', methods=['POST'])
-def submit():
+
     # get the medical complications entered by the user
     medical_complications = request.form.getlist('medical_complications')
 
@@ -71,7 +77,7 @@ def submit():
     host="localhost",
     user="root",
     password="123456",
-    database="medical_complications")
+    database="survey_reports")
     
     # create a cursor object to execute SQL queries
     cursor = mydb1.cursor()
@@ -92,30 +98,7 @@ def submit():
     mydb1.close()
     
     # render the results template with the matching yoga asanas and dietary habits
-    return render_template('result.html', matching_results=matching_results)
-
-def mlModel(age_group, gender, stress_level, activity_level, occupation):
-    # load the trained model
-    with open('medical_complications_model.pkl', 'rb') as file:
-        model = pickle.load(file)
-    # # load the trained model
-    # with open('medical_complications_model.pkl', 'rb') as file:
-    #     model = pickle.load(file)
-    #     age_group = request.form.get('age_group')
-    #     gender = request.form.get('gender')
-    #     stress_level = request.form.get('stress_level')
-    #     activity_level = request.form.get('activity_level')
-    #     occupation = request.form.get('occupation')
-    #     # convert the user details to a list
-    #     user_details = [age_group, gender, stress_level, activity_level, occupation]
-        
-        # make a prediction using the trained model
-        # prediction = model.predict([user_details])[0]
-        return model.predict([user_details])[0]
-        
-    # render the results template with the predicted medical complication
-    return render_template('result.html', prediction=prediction)
-
+    return render_template('bmi.html', matching_results=matching_results)"""
     
 if __name__== '_main_':
     app.run(debug=True)
