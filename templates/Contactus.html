@@ -42,7 +42,7 @@
     <meta charset="UTF-8" />
     <!-- <title> Responsive Contact Us Form  | CodingLab </title>-->
 
-    <link rel="stylesheet" href="Contactus.css" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='Contactus.css')}}">
     <!-- <link rel="stylesheet" href="Landingpage.css" /> -->
     <!-- Fontawesome CDN Link -->
     <link
@@ -107,11 +107,11 @@
          <i class="fas fa-bars"></i>
        </label>
        <ul>
-         <li><a href="Landingpage.html" class="active">Home</a></li>
-         <li><a href="form1.html">Get Started</a></li>
-         <li><a href="#">Analysis</a></li>
-         <li><a href="Aboutus.html">About Us</a></li>
-         <li><a href="Contactus.html">Contact Us</a></li>
+         <li><a href="/"class="active">Home</a></li>
+         <li><a href="/Get Started">Get Started</a></li>
+         <li><a href="/Analysis">Analysis</a></li>
+         <li><a href="/About us">About Us</a></li>
+         <li><a href="/Contact us">Contact Us</a></li>
        </ul>
     </nav>
 
