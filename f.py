@@ -22,5 +22,28 @@ def getstarted():
     return render_template("form1.html")
 @app.route('/Yogas')
 def yoda():
-    return render_template("Yoga.html")
+    return render_template("Yogas.html")
+# @app.route('/next')
+# def form2():
+#     return render_template("form2.html")
+@app.route('/report')
+def main_page():
+    return render_template("bmi.html")
+@app.route("/diet")
+def diet():
+    return render_template("diet.html")
+@app.route("/exercise")
+def exer():
+    return render_template("excercises.html")
+@app.route('/next', methods=['GET','POST'])
+def submit():
+     if (request.method=='POST'):
+        name = request.form.get['Username']
+        age = request.form.get['Age']
+        height = request.form.get['Height']
+        weight = request.form.get['Weight']
+        gender = request.form.get['Gender']
+        bmi = calculate_bmi(float(weight), float(height))
+     return render_template('form2.html', name=name,age=age,height=height,bmi=bmi,gender=gender)
+
 app.run(debug=True)
