@@ -1,6 +1,5 @@
 from flask import Flask , render_template , request
 import mysql.connector
-import pickle
 
 # function to calculate BMI
 def calculate_bmi(weight, height):
@@ -10,7 +9,6 @@ def calculate_bmi(weight, height):
 app = Flask(__name__)
 
 @app.route('/')
-
 def styling():
     return render_template("Landingpage.html")
 @app.route('/Analysis')
@@ -41,7 +39,7 @@ def submit():
     host="localhost",
     user="root",
     password="123456",
-    database="users_info") 
+    database="user_info") 
                         
     #Create cursor
     cursor = mydb.cursor()
