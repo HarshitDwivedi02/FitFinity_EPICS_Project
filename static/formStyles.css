@@ -10,6 +10,7 @@ html {
   
   .nav {
     background-color: rgba(0,0,0,.6);
+    height: 120px;
   }
 
   .input-box {
@@ -23,6 +24,7 @@ html {
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
+    margin-top: 20px;
   }
   
   .input-box h2 {
@@ -182,3 +184,29 @@ html {
     }
   }
   
+  .nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  .nav-links li:last-child {
+    margin-right: 0;
+  }
+  
+  .nav-links p {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 4px;
+  }
+
+  .container{
+    display: inline-block;
+  }
