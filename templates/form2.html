@@ -27,14 +27,14 @@
     </header>
     <div class="input-box">
       <h2>Details</h2>
-      <form action="" method="">
+      <form action="{{url_for('get')}}" method="post">
         <div class="user-box">
-          <input type="number" name="" required="" />
+          <input type="number" name="stress_level" id="stress_level" required="" />
           <label>Stress Level (On a scale of 0-5)</label>
         </div>
 
         <div class="user-box">
-          <input type="number" name="" required="" />
+          <input type="number" name="activity_level" id="activity_level" required="" />
           <label>Activity Lifestyle (On a scale of 0-10)</label>
         </div>
 
@@ -67,13 +67,16 @@
           <input class="drop" type="submit" value="Confirm" />
         </div>
 
-        <a href="./report">
+        <button class="btn-contact">Submit</button>
+
+
+        <!-- <a href="./get">
           <span></span>
           <span></span>
           <span></span>
           <span></span>
           Get Your Results
-        </a>
+        </a> -->
       </form>
     </div>
   </body>

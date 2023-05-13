@@ -35,10 +35,8 @@ def getstarted():
 def yoda():
     return render_template("Yogas.html")
 
-
-@app.route('/report')
-def main_page():
-    return render_template("bmi.html")
+"""def main_page():
+    return render_template("excercises.html")"""
 
 
 @app.route("/diet")
@@ -63,8 +61,14 @@ def submit():
 
      return render_template('form2.html', name=name,age=age,height=height,bmi=bmi,gender=gender,weight=weight)
 
+@app.route('/get', methods=['POST','GET'])
+def get():
+     if (request.method=='POST'):
+        stress_level = request.form.get('stress_level')
+        activity_level = request.form.get('activity_level')
+     return render_template('excercises.html', stress_level=stress_level,activity_level=activity_level)
 
-
+        
 
 if __name__ == '__main__':
     app.run(debug=True)
