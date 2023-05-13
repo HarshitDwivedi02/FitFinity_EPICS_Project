@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>About us</title>
-	<link rel="stylesheet" type="text/css" href="Aboutus.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='Aboutus.css')}}">
 
 	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
@@ -21,11 +21,11 @@
            <i class="fas fa-bars"></i>
          </label>
          <ul>
-           <li><a href="Landingpage.html" class="active">Home</a></li>
-           <li><a href="form1.html">Get Started</a></li>
-           <li><a href="DATA_ANALYSIS.html">Analysis</a></li>
-           <li><a href="Aboutus.html">About Us</a></li>
-           <li><a href="Contactus.html">Contact Us</a></li>
+           <li><a href="/" class="active">Home</a></li>
+           <li><a href="/Get Started">Get Started</a></li>
+           <li><a href="/Analysis">Analysis</a></li>
+           <li><a href="About us">About Us</a></li>
+           <li><a href="Contact us">Contact Us</a></li>
          </ul>
       </nav>
 
@@ -33,7 +33,7 @@
         <div class="info-row">
           <img
             class="liver-img"
-            src="{{ url_for('static',filename='VIT Bhopal logo.jpg')}}" 
+            src="{{ url_for('static',filename='VIT Bhopal logo.jpeg')}}" 
             alt="liver"
 			
           />
@@ -48,7 +48,7 @@
         <div class="info-row">
           <img
             class="card-img"
-            src="{{ url_for('static',filename='Aim.jpg')}}"
+            src="{{ url_for('static',filename='Aim.jpeg')}}"
             alt="card"
           />
           <h3 class="feature-title">AIM</h3>
@@ -74,7 +74,7 @@ Fit-Finity can be a valuable tool for individuals looking to improve their fitne
 
 		<div class="team-content">
 			<div class="box">
-				<img src="AC.jpeg">
+				<img src="{{ url_for('static',filename='AC.jpeg')}}">
 				<h3>Akshatt Chhabra</h3>
 				<h5>20BCE10</h5>
 				<!-- <div class="icons">
@@ -85,7 +85,7 @@ Fit-Finity can be a valuable tool for individuals looking to improve their fitne
 			</div>
 
 			<div class="box">
-				<img src="MM.jpeg">
+				<img src="{{ url_for('static',filename='MM.jpeg')}}">
 				<h3>Madhav Mishra</h3>
 				<h5>20BCE11076</h5>
 				<!-- <div class="icons">
@@ -96,7 +96,7 @@ Fit-Finity can be a valuable tool for individuals looking to improve their fitne
 			</div>
 
 			<div class="box">
-				<img src="HD.JPG">
+				<img src="{{ url_for('static',filename='HD.jpg')}}">
 				<h3>Harshit Dwivedi</h3>
 				<h5>20BCE11082</h5>
 				<!-- <div class="icons">
@@ -107,7 +107,7 @@ Fit-Finity can be a valuable tool for individuals looking to improve their fitne
 			</div>
 
 			<div class="box">
-				<img src="SK.jpg">
+				<img src="{{ url_for('static',filename='SK.jpg')}}">
 				<h3>Shrey Khanduja</h3>
 				<h5>20BAI10194</h5>
 				<!-- <div class="icons">
@@ -118,7 +118,7 @@ Fit-Finity can be a valuable tool for individuals looking to improve their fitne
 			</div>
 
             <div class="box">
-				<img src="US.jpeg">
+				<img src="{{ url_for('static',filename='US.jpeg')}}">
 				<h3>Ujjwal Srivasatava</h3>
 				<h5>20MIP10020</h5>
 				<!-- <div class="icons">
@@ -128,7 +128,7 @@ Fit-Finity can be a valuable tool for individuals looking to improve their fitne
 				</div> -->
 			</div>
             <div class="box">
-				<img src="AM.jpg">
+				<img src="{{ url_for('static',filename='AM.jpg')}}">
 				<h3>Ananya Manojawas</h3>
 				<h5>20MIP10028</h5>
 				<!-- <div class="icons">
@@ -138,7 +138,7 @@ Fit-Finity can be a valuable tool for individuals looking to improve their fitne
 				</div> -->
 			</div>
             <div class="box">
-				<img src="IS.jpg">
+				<img src="{{ url_for('static',filename='IS.jpg')}}">
 				<h3>Ishika Shrivastava</h3>
 				<h5>20MIP10035</h5>
 				<!-- <div class="icons">
@@ -148,7 +148,7 @@ Fit-Finity can be a valuable tool for individuals looking to improve their fitne
 				</div> -->
 			</div>
             <div class="box">
-				<img src="AR.jpg">
+				<img src="{{ url_for('static',filename='AR.jpG')}}">
 				<h3>Avinash Roy</h3>
 				<h5>20BCY</h5>
 				<!-- <div class="icons">
