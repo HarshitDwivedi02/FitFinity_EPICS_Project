@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      Contact Us
+    </title>
+    <link rel="icon" type="image/png" href="images/logo_2.png" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Stylesheets -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Scripts -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
+    <meta charset="UTF-8" />
+    <!-- <title> Responsive Contact Us Form  | CodingLab </title>-->
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='Contactus.css')}}">
+    <!-- <link rel="stylesheet" href="Landingpage.css" /> -->
+    <!-- Fontawesome CDN Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <!-- nav bar
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <a class="navbar-brand" href="index.html">AnshDaan</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pricing">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#cta">Download</a>
+            </li>
+          </ul>
+
+        </div>
+      </nav> -->
+    <!-- Nav Bar -->
+
+    <!-- <a class="navbar-brand" href="index.html">AnshDaan</a> -->
+    <!-- <a href="Frontend/Landingpage.html"
+      ><img id="logo" src="contact-us-1908762__340.jpg" , width="200px"
+    /></a> -->
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="FIT-FINITY">FIT-FINITY</div>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarTogglerDemo02"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        
+      </div>
+    </nav>  -->
+
+    <nav>
+      <div class="FIT-FINITY">FIT-FINITY</div>
+       <input type="checkbox" id="click">
+       <label for="click" class="menu-btn">
+         <i class="fas fa-bars"></i>
+       </label>
+       <ul>
+         <li><a href="/"class="active">Home</a></li>
+         <li><a href="/Get Started">Get Started</a></li>
+         <li><a href="/Analysis">Analysis</a></li>
+         <li><a href="/About us">About Us</a></li>
+         <li><a href="/Contact us">Contact Us</a></li>
+       </ul>
+    </nav>
+
+    <!-- form -->
+    <div class="container">
+      <div class="content">
+        <div class="left-side">
+          <div class="address details">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="topic">Address</div>
+            <div class="text-one">VIT Bhopal</div>
+            <div class="text-two">Madhya Pradesh, India</div>
+          </div>
+          <div class="phone details">
+            <i class="fas fa-phone-alt"></i>
+            <div class="topic">Phone</div>
+            <div class="text-one">9870668860</div>
+            <div class="text-two">6264334265</div>
+          </div>
+          <div class="email details">
+            <i class="fas fa-envelope"></i>
+            <div class="topic">Email</div>
+            <div class="text-one">ujjwal.srivastava@vitbhopal.ac.in</div>
+            <div class="text-two">harshit.dwivedi2020@vitbhopal.ac.in</div>
+          </div>
+        </div>
+        <!-- <div class="right-side">
+          <div class="topic-text">Send us a message</div>
+          <p>
+            If you have any query related to organ or blood donation, feel free
+            to send us an email
+          </p>
+          <form action="#">
+            <div class="input-box">
+              <input type="text" placeholder="Full Name" />
+            </div>
+            <div class="input-box">
+              <input type="text" placeholder="Email" />
+            </div>
+            <div class="concern">
+              <textarea type="text" placeholder="Query" cols="70" rows="7"></textarea>
+            </div>
+            <div class="button">
+              <input type="button" value="Send Now" />
+            </div> -->
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    
+  </body>
+</html>
