@@ -13,9 +13,21 @@ app = Flask(__name__)
 
 def styling():
     return render_template("Landingpage.html")
+@app.route('/Analysis')
+def analysis():
+    return render_template("analytics.html")
+@app.route('/About us')
+def about():
+    return render_template("about.html")
+@app.route('/Contact us')
+def contact():
+    return render_template("contact.html")
+@app.route('/Get Started')
+def getstarted():
+    return render_template("form1.html")
 
 # route to handle the form 1 submission
-@app.route('/Get Started', methods=['GET','POST'])
+@app.route('/NEXT', methods=['GET','POST'])
 def submit():
     if (request.method=='POST'):
        name = request.form.get['name']
@@ -33,15 +45,6 @@ def submit():
                         
     #Create cursor
     cursor = mydb.cursor()
-    # Create a table to store user details
-    mydb.execute('''CREATE TABLE IF NOT EXISTS users(
-                id INTEGER PRIMARY KEY,
-                name TEXT NOT NULL,
-                age INTEGER NOT NULL,
-                gender TEXT NOT NULL,
-                height REAL NOT NULL,
-                weight REAL NOT NULL)''')
-
 
     # Insert user details into the database
     query = "INSERT INTO users (name, age, height, weight, gender, bmi) VALUES (%s, %s, %s, %s, %s)"
@@ -54,34 +57,37 @@ def submit():
    # return the user's details from the database
     cursor.execute("SELECT * FROM users WHERE id=%s", (cursor.lastrowid,))
     result = cursor.fetchone()
-    return render_template('form1.html', result=result)
+    return render_template('form2.html', result=result)
 
 # route to handle the form 2 submission
-@app.route('/GET YOUR RESULTS', methods=['POST'])
+@app.route('/GET YOUR RESULTS', methods=['GET','POST'])
 def submit1():
-    stress_level = request.form['stress_level']
-    activity_level = request.form['activity_level']
+    if (request.method=='POST'):
+       stress_level = request.form.get['stress_level']
+       activity_level = request.form.get['activity_level']
+
     
     # return the user's details from the database
-    return render_template('form2.html',  stress_level=stress_level, activity_level=activity_level)
+    return render_template('report.html',  stress_level=stress_level, activity_level=activity_level)
 
 # route to handle the form submission and match the entered values with the database
-"""
-@app.route('/submit2', methods=['POST'])
-
-    # get the medical complications entered by the user
-    medical_complications = request.form.getlist('medical_complications')
+@app.route('/GET YOUR RESULTS', methods=['GET','POST'])
+def yoga_diet():
+    if (request.method=='POST'):
+       # get the medical complications entered by the user
+       medical_complications = request.form.getlist('medical_complications')
 
     # create a connection to the database
     mydb1 = mysql.connector.connect(
     host="localhost",
     user="root",
     password="123456",
-    database="survey_reports")
+    database="yoga_diet")
     
     # create a cursor object to execute SQL queries
     cursor = mydb1.cursor()
-     # create an empty list to store the matching yoga asanas and dietary habits
+
+    # create an empty list to store the matching yoga asanas and dietary habits
     matching_results = []
     
     # iterate over each medical complication entered by the user
@@ -98,7 +104,7 @@ def submit1():
     mydb1.close()
     
     # render the results template with the matching yoga asanas and dietary habits
-    return render_template('bmi.html', matching_results=matching_results)"""
+    return render_template('report.html', matching_results=matching_results)
     
 if __name__== '_main_':
     app.run(debug=True)
