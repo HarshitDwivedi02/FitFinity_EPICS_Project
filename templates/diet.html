@@ -20,24 +20,23 @@
         <!-- <li><a href="#">Home</a></li>
         <li><a href="./result1.html">BMI</a></li> -->
         <li><a href="./exercise">Excercises</a></li>
-        <li><a href="./diet">Diet</a></li>
+        <!-- <li><a href="./diet">Diet</a></li> -->
       </ul>
     </nav>
 
     <div class="input-box">
       <h2>Diet</h2>
 
-      <div class="user-box">
+      <!-- <div class="user-box">
         <p>Result</p>
-      </div>
+      </div> -->
 
-      <div class="user-box">
-        <p>Rich in Protein</p>
+      <div class="result-box">
+        {% for i in dietlst: %}
+        <p>{{i}}</p>
+        {% endfor %}
       </div>
-
-      <div class="user-box">
-        <p>High Fibre and Omega Rich</p>
-      </div>
+      
     </div>
   </body>
 </html>

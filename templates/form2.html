@@ -27,7 +27,7 @@
     </header>
     <div class="input-box">
       <h2>Details</h2>
-      <form action="{{url_for('get')}}" method="post">
+      <form action="{{url_for('exercise')}}" method="post">
         <div class="user-box">
           <input type="number" name="stress_level" id="stress_level" required="" />
           <label>Stress Level (On a scale of 0-5)</label>
@@ -41,33 +41,32 @@
         <div class="user-box">
           <label for="Issue">Choose Health Issue:</label>
           <br /><br />
-          <select id="Tssue" name="cars">
-
-            <option value="SkinProblems">Skin Problems</option>
+          <select id="medical_complication" name="medical_complication" >
+            <option value="Skin Problems">Skin Problems</option>
             <option value="Anxiety">Anxiety</option>
             <option value="Asthma">Asthma</option>
-            <option value="BackPain">Back Pain</option>
+            <option value="Back Pain">Back Pain</option>
             <option value="Digestion">Digestion</option>
-            <option value="EyesRelated">Eyes Related</option>
-            <option value="BloodPressure">Blood Pressure (HyperTension)</option>
+            <option value="Eyes Related">Eyes Related</option>
+            <option value="Blood Pressure (HyperTension)">Blood Pressure (HyperTension)</option>
             <option value="Cardiovascular">Cardiovascular</option>
             <option value="Diabetes">Diabetes</option>
-            <option value="Headache">Headache (Migraine)</option>
+            <option value="Headache (Migraine)">Headache (Migraine)</option>
             <option value="Stress">Stress</option>
-            <option value="Muscles">Muscles (Strain , Pull , Soreness)</option>
-            <option value="Overweight">Overweight , obesity</option>
+            <option value="Muscles (Strain , Pull , Soreness)">Muscles (Strain , Pull , Soreness)</option>
+            <option value="Overweight , obesity">Overweight , obesity</option>
             <option value="Immunity">Immunity</option>
-            <option value="Cough">Cough , Cold</option>
+            <option value="Cough , Cold">Cough , Cold</option>
             <option value="Cholestrol">Cholestrol</option>
-            <option value="KneePain">Knee Pain</option>
-            <option value="Arthritis">Arthritis or any sort of pain</option>
-            <option value="Underweight">Underweight , muscle gain</option>
-            <option value="HairProblems">Hair Problems</option>
+            <option value="Knee Pain">Knee Pain</option>
+            <option value="Arthritis or any sort of pain">Arthritis or any sort of pain</option>
+            <option value="Underweight , muscle gain">Underweight , muscle gain</option>
+            <option value="Hair Problems">Hair Problems</option>
           </select>
-          <input class="drop" type="submit" value="Confirm" />
+          <input class="drop" type="submit"  value="confirm" name="medical_complication" />
         </div>
-
-        <button class="btn-contact">Submit</button>
+        <!-- value="Confirm" -->
+        <!-- <button class="btn-contact">Submit</button> -->
 
 
         <!-- <a href="./get">

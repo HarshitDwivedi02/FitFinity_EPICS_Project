@@ -40,7 +40,7 @@ nav{
     border-bottom:1.5px solid transparent;
     transition:all 0.3s ease;
   }
-  nav ul li a.active,
+  /* nav ul li a.active, */
   nav ul li a:hover{
     border-color: black;
     color:black;
