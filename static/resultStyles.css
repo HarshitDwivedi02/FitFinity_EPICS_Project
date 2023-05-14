@@ -12,6 +12,11 @@ body {
   background-color: rgba(0,0,0,.6);
 }
 
+.result-box {
+  color: whitesmoke;
+  text-align: center;
+}
+
 .input-box {
   position: absolute;
   top: 55%;
